@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="w3-card-2 topnav notranslate">
+    <div class="overflow:auto;">
+        <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+            <a href="/find" class="w3-bar-item w3-button">Узнать болезнь</a>
+            <a href="/addsym" class="w3-bar-item w3-button">Добавить симптом</a>
+            <a href="/addisiase" class="w3-bar-item w3-button">Добавить болезнь</a>
+
+        </div>
+    </div>
+
+</div>
+
+<div>
+    <h3>Select symptoms</h3>
+    <form action="/findDis" method="post">
+        <ul class="w3-ul w3-hoverable" style="width:50%; overflow-y: scroll; height: 400px">
+        {{#symptoms}}
+           <li> <input type="checkbox" name="symptom" value="{{id}}"> {{symptom}} </li>
+        {{/symptoms}}
+        </ul>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

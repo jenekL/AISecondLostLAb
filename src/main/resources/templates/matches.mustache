@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div> Set </div>
+<h3>Select symptoms</h3>
+<div>
+    <form action="add" method="post">
+        <h3>Diseases</h3>
+        {{#diseases}}
+            <input type="checkbox" name="disease_id" value="{{id}}"> {{disease}} <br>
+        {{/diseases}}
+        <h3>Symptoms</h3>
+        {{#symptoms}}
+
+            <input type="checkbox" name="symptom" value="{{id}}"> {{symptom}}
+
+            <input type="text" name = "confidence" value="" style="width: 40px">
+            <input type="text" name = "distrust" value="" style="width: 40px">
+
+            <br>
+        {{/symptoms}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div>
+    <h3>Diseases</h3>
+    <form method="post" action="showDis">
+        <button type="submit">Показать</button>
+    </form>
+    <form method="post" action="addDis">
+        <input type="text" name="newDisease" placeholder="Введите болезнь">
+        <button type="submit">Добавить</button>
+    </form>
+    <form method="post" action="delDis">
+        <input type="text" name="delDisease" placeholder="Какую удалить">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+
+<div>
+    <h3>Symptoms</h3>
+    <form method="post" action="showSym">
+       <button type="submit">Показать</button>
+    </form>
+    <form method="post" action="addSym">
+        <input type="text" name="newSym" placeholder="Введите симптом">
+        <button type="submit">Добавить</button>
+    </form>
+    <form method="post" action="delSym">
+        <input type="text" name="delSym" placeholder="Какой симптом удалить">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+
+<div> List </div>
+<div class="container">
+    <div class="">
+        {{#diseases}}
+            <div>
+                <b>{{id}}</b>
+                <b>{{disease}}</b>
+            </div>
+        {{/diseases}}
+    </div>
+
+    <div>
+        {{#symptoms}}
+            <div>
+                <b>{{id}}</b>
+                <b>{{symptom}}</b>
+            </div>
+        {{/symptoms}}
+    </div>
+</div>
+
+
+</body>
+</html>

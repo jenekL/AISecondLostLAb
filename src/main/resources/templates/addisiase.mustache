@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Добавление болезни</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<header>
+<div class="w3-card-2 topnav notranslate">
+    <div class="overflow:auto;">
+        <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+            <a href="/find" class="w3-bar-item w3-button">Узнать болезнь</a>
+            <a href="/addsym" class="w3-bar-item w3-button">Добавить симптом</a>
+            <a href="/addisiase" class="w3-bar-item w3-button">Добавить болезнь</a>
+
+        </div>
+    </div>
+
+</div>
+</header>
+<div >
+<div class="w3-padding w3-display-left">
+    <h3>Diseases</h3>
+
+    <form method="post" action="delDis">
+        <input type="text" name="delDisease" placeholder="Какую удалить">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+    <form method="post" action="addDis">
+        <div class="w3-padding w3-display-topmiddle" style="margin-top: 40px">
+        <input type="text" name="newDisease" placeholder="Введите болезнь">
+        <button type="submit">Добавить</button>
+        </div>
+
+
+
+<div class="w3-padding w3-display-topleft" style="margin-top: 40px">
+
+<div class="container">
+    <h2> List </h2>
+    <div class="">
+        {{#diseases}}
+            <div>
+                <b>{{id}}</b>
+                <b>{{disease}}</b>
+            </div>
+        {{/diseases}}
+    </div>
+
+</div>
+</div>
+
+    <div class="w3-padding w3-display-middle" style="margin-top: 50px">
+        <h2> List symptoms </h2>
+        <div class="container">
+            <div class="">
+                {{#symptoms}}
+                    <input type="checkbox" name="symptom" value="{{id}}"> {{symptom}}
+                    <input type="text" name = "confidence" value="" style="width: 40px">
+                    <input type="text" name = "distrust" value="" style="width: 40px">
+                    <br>
+                {{/symptoms}}
+            </div>
+
+        </div>
+    </div>
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Добавление симптома</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div class="w3-card-2 topnav notranslate">
+    <div class="overflow:auto;">
+        <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+            <a href="/find" class="w3-bar-item w3-button">Узнать болезнь</a>
+            <a href="/addsym" class="w3-bar-item w3-button">Добавить симптом</a>
+            <a href="/addisiase" class="w3-bar-item w3-button">Добавить болезнь</a>
+
+        </div>
+    </div>
+
+</div>
+<div>
+    <h3>Symptoms</h3>
+    <form method="post" action="showSym">
+        <button type="submit">Показать</button>
+    </form>
+    <form method="post" action="addSym">
+        <input type="text" name="newSym" placeholder="Введите симптом">
+        <button type="submit">Добавить</button>
+    </form>
+    <form method="post" action="delSym">
+        <input type="text" name="delSym" placeholder="Какой симптом удалить">
+        <button type="submit">Удалить</button>
+    </form>
+</div>
+
+<div> List </div>
+<div class="container">
+
+    <div>
+        {{#symptoms}}
+            <div>
+                <b>{{id}}</b>
+                <b>{{symptom}}</b>
+            </div>
+        {{/symptoms}}
+    </div>
+</div>
+
+
+</body>
+</html>
